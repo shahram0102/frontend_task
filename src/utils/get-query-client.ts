@@ -1,10 +1,10 @@
-import { isServer, QueryClient } from "@tanstack/react-query";
+import { QueryClient } from "@tanstack/react-query";
 
 function makeQueryClient() {
   return new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 60 * 1000,
+        staleTime: 60 * 60 * 1000,
       },
     },
   });
@@ -13,8 +13,6 @@ function makeQueryClient() {
 let browserQueryClient: QueryClient | undefined = undefined;
 
 export function getQueryClient() {
-  if (isServer) return makeQueryClient();
-
   browserQueryClient ??= makeQueryClient();
   return browserQueryClient;
 }
