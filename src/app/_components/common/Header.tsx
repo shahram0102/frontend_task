@@ -9,11 +9,14 @@ import { Button } from "../ui/button";
 
 export default function Header() {
   return (
-    <header className="bg-muted sticky top-0 w-full shadow">
+    <header className="bg-muted sticky top-0 z-10 w-full shadow">
       <div className="mx-auto grid max-w-[500px] grid-cols-[80px_1fr_80px] items-center justify-between px-4 py-3">
-        <div className="flex items-center justify-start">
-          <Button title="Back" variant="ghost" size="icon-lg">
-            <ChevronLeftIcon />
+        <div className="flex items-center justify-end">
+          <Button title="Menu" variant="ghost" size="icon-lg">
+            <Bars3Icon />
+          </Button>
+          <Button title="Search" variant="ghost" size="icon-lg">
+            <MagnifyingGlassIcon />
           </Button>
         </div>
         <div className="flex items-center justify-center">
@@ -27,11 +30,8 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex items-center justify-end">
-          <Button title="Search" variant="ghost" size="icon-lg">
-            <MagnifyingGlassIcon />
-          </Button>
-          <Button title="Menu" variant="ghost" size="icon-lg">
-            <Bars3Icon />
+          <Button title="Back" variant="ghost" size="icon-lg">
+            <ChevronLeftIcon />
           </Button>
         </div>
       </div>

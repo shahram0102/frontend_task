@@ -20,7 +20,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable} bg-muted`}>
+    <html lang="en" dir="rtl" className={`${geist.variable} bg-muted`}>
       <body>
         <Header />
         <Providers>{children}</Providers>
