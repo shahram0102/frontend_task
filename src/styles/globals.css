@@ -19,3 +19,15 @@
   --muted: #241b20;
   --muted-foreground: #afafb9;
 }
+
+::-webkit-scrollbar {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-transparent;
+}
