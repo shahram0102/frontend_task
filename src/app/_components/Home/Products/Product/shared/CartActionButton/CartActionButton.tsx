@@ -6,7 +6,13 @@ import { cn } from "@/utils/cn";
 import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 
-export default function CartActionButton({ product }: { product: IProduct }) {
+export default function CartActionButton({
+  product,
+  className,
+}: {
+  product: IProduct;
+  className?: string;
+}) {
   const products = useStore.use.products();
   const existingItem = products.find((p) => p.id === product.id);
 
@@ -27,12 +33,14 @@ export default function CartActionButton({ product }: { product: IProduct }) {
       className={cn(
         "bg-primary absolute right-1 -bottom-3 flex min-h-10 min-w-10 items-center gap-1 rounded-[10px] shadow",
         existingItem ? "justify-between p-1" : "justify-center",
+        className,
       )}
     >
       <Button
         onClick={onIncrease}
         variant={existingItem ? "secondary" : "default"}
         size="icon"
+        className={cn(existingItem && "hover:text-muted-foreground")}
       >
         <PlusIcon />
       </Button>
