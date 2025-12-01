@@ -25,7 +25,7 @@ export default function CartActionButton({ product }: { product: IProduct }) {
       }}
       transition={{ type: "spring", damping: 10 }}
       className={cn(
-        "bg-primary absolute right-1 -bottom-3 flex min-h-10 min-w-10 items-center gap-1 rounded-[10px]",
+        "bg-primary absolute right-1 -bottom-3 flex min-h-10 min-w-10 items-center gap-1 rounded-[10px] shadow",
         existingItem ? "justify-between p-1" : "justify-center",
       )}
     >
