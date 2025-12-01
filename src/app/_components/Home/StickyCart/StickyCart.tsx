@@ -4,6 +4,7 @@ import useStore from "@/store/index.store";
 import { Button } from "../../ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { getFinalPrice } from "@/utils/get-final-price";
+import toast from "react-hot-toast";
 
 export default function StickyCart() {
   const products = useStore.use.products();
@@ -29,12 +30,15 @@ export default function StickyCart() {
           transition={{ type: "spring", stiffness: 200, damping: 18 }}
           className="fixed right-0 bottom-6 left-0 z-50 mx-auto px-4"
         >
-          <div className="bg-primary mx-auto flex max-w-[500px] items-center justify-between rounded-[10px] p-4 shadow-lg">
+          <div
+            onClick={() => toast.error("این بخش در دست توسعه میباشد.")}
+            className="bg-primary mx-auto flex max-w-[500px] items-center justify-between rounded-[10px] p-4 shadow-lg"
+          >
             <div className="flex items-center gap-2">
               <Button className="rounded-full" size="icon" variant="secondary">
                 <span className="font-bold">{totalQuantity}</span>
               </Button>
-              <span className="text-sm font-bold text-white">تکمیل خرید</span>
+              <span className="text-sm font-bold text-white">تکمیل خرید </span>
             </div>
 
             <span className="font-bold text-white">

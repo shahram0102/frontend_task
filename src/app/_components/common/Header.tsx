@@ -9,7 +9,7 @@ import { Button } from "../ui/button";
 
 export default function Header() {
   return (
-    <header className="bg-muted sticky top-0 z-10 w-full shadow">
+    <header className="bg-muted sticky top-0 z-50 w-full shadow">
       <div className="mx-auto grid max-w-[500px] grid-cols-[80px_1fr_80px] items-center justify-between px-4 py-3">
         <div className="flex items-center justify-end">
           <Button title="Menu" variant="ghost" size="icon-lg">
