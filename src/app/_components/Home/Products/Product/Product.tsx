@@ -1,12 +1,9 @@
 import Image from "next/image";
+import CartActionButton from "./CartActionButton/CartActionButton";
+import { getFinalPrice } from "@/utils/get-final-price";
 
 export default function Product({ product }: { product: IProduct }) {
-  const finalPrice = Number(
-    (
-      product.price -
-      product.price * (product.discountPercentage / 100)
-    ).toFixed(2),
-  ).toLocaleString("fa-IR");
+  const finalPrice = getFinalPrice(product).toLocaleString("fa-IR");
 
   return (
     <div className="relative flex gap-2 rounded-2xl p-4 shadow-xl">
@@ -20,6 +17,7 @@ export default function Product({ product }: { product: IProduct }) {
       )}
       <div className="relative aspect-square size-[110px]">
         <Image src={product.images[0]!} fill alt={product.title} />
+        <CartActionButton product={product} />
       </div>
       <div className="flex flex-1 flex-col">
         <div className="flex w-full flex-col">
